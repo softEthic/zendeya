@@ -1,0 +1,138 @@
+
+/* GENERAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    background-color: #f9d423;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* HEADER */
+.header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 25px 5%;
+}
+
+/* LOGO */
+.logo {
+    text-decoration: none;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* NAVIGATION */
+.navigation {
+    display: grid;
+    grid-column: 2;
+    grid-row: 1;
+    grid-auto-flow: column;
+    gap: 30px;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* HAMBURGER BUTTON */
+#hamburger {
+    display: none;
+    grid-column: 2;
+    grid-row: 1;
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.about {
+    text-align: center;
+}
+
+.work {
+    text-align: center;
+}
+
+/* HERO SECTION */
+.hero {
+    background: url("assets/zendeya2.webp");
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding: 8% 5%;
+}
+
+.hero h1 {
+    font-size: clamp(4rem, 12vw, 11rem);
+    line-height: .85;
+    letter-spacing: -.07em;
+}
+
+.hero img {
+    width: 100%;
+    margin-top: 60px;
+    object-fit: cover;
+}
+
+/* MOVIE POSTERS */
+.movie-posters {
+    display: grid;
+    grid-template-columns: repeat(3, 180px);
+    gap: 15px;
+    justify-content: center;
+    padding: 30px 5%;
+}
+
+.movie-posters img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+/* FOOTER */
+.footer {
+    padding: 25px;
+    background: linear-gradient(40deg, #e65c00, #f9d423);
+}
+
+/* MOBILE NAVIGATION */
+@media (max-width: 768px) {
+
+    #hamburger {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        grid-auto-flow: row;
+        gap: 20px;
+        padding-top: 20px;
+    }
+
+    .navigation.open {
+        display: grid;
+    }
+
+    .movie-posters {
+        grid-template-columns: repeat(2, minmax(0, 180px));
+    }
+}
